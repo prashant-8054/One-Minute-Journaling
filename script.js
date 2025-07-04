@@ -10,10 +10,15 @@ function endTimer() {
     if (!message) {
         message = document.createElement("p");
         message.id = "endMessage";
-        message.style.color = "green";
+        message.style.color = "orange";
         startBtn.parentNode.appendChild(message);
     }
     message.textContent = "Time's up! Your journal entry has been saved.";
+}
+
+const oldMessage = document.getElementById("endMessage");
+if (oldMessage) {
+    oldMessage.style.display = "none";
 }
 
 function submitEntry(entry) {
@@ -41,3 +46,10 @@ startBtn.addEventListener("click", () => {
         }
     }, 1000);
 });
+
+
+
+
+
+// Add features: choose fonts before the timer starts, save journals, AI-generated summary, count the number of words of each entry, provide lined-background that feels like writing on paper, etc.
+// Bugs: the final message remains even after restarting the timer or refreshing the page.
