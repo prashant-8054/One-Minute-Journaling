@@ -8,12 +8,25 @@
 </head>
 <body>
 
+    <label for="fontSelect">Choose font:</label>
+    <select id="fontSelect">
+        <option value="Arial, sans-serif">Arial</option>
+        <option value="'Courier New', monospace">Courier New</option>
+        <option value="'Georgia', serif">Georgia</option>
+        <option value="'Times New Roman', serif">Times New Roman</option>
+        <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
+    </select>
+
+    <form action="" method="post" autocomplete="off">
     <div class="container">
         <h1>One-Minute Journal</h1>
-        <p id="timer">60</p>
-        <textarea id="journalInput" placeholder="Start typing..." disabled></textarea>
-        <button id="startBtn">Start Journaling</button>
+        <p id="timer" aria-live="polite">60</p>
+        <label for="journalInput" class="visually-hidden">Journal Entry</label>
+        <textarea id="journalInput" name="Entry" placeholder="Start typing..." disabled></textarea>
+        <button id="startBtn" type="button">Start Journaling</button>
+        <!-- <button>Reset</button> -->
     </div>
+    </form>
     
     <script src="/script.js"></script>
 </body>
