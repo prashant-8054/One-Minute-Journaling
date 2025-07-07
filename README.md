@@ -1,0 +1,1 @@
+In such overwhelming times, we rarely find a moment to reflect on our lives. So I decided to build something that doesn't demand much attention — a way to journal your thoughts in just one minute. Almost zero pressure to show up. And don't underestimate the power of continuity. In just a week, you'll look back and be surprised by how much you've written.
