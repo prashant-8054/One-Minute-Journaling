@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>One-Minute Journal</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>One-Minute Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display&family=Roboto&family=Lora&family=Montserrat&family=Fira+Code&family=Dancing+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <label for="fontSelect">Choose font:</label>
-    <select id="fontSelect">
+  <main class="app">
+    <section class="font-select" aria-label="Font selection">
+      <label for="fontSelect">Choose font:</label>
+      <select id="fontSelect" name="font">
+       <option value="'Inter', sans-serif">Inter</option>
+        <option value="'Playfair Display', serif">Playfair Display</option>
         <option value="Arial, sans-serif">Arial</option>
         <option value="'Courier New', monospace">Courier New</option>
+        <option value="'Comic Sans MS', cursive">Comic Sans</option>
+        <option value="'Roboto', sans-serif">Roboto</option>
+        <option value="'Lora', serif">Lora</option>
+        <option value="'Montserrat', sans-serif">Montserrat</option>
         <option value="'Georgia', serif">Georgia</option>
-        <option value="'Times New Roman', serif">Times New Roman</option>
-        <option value="'Comic Sans MS', cursive">Comic Sans MS</option>
-    </select>
+        <option value="'Fira Code', monospace">Fira Code</option>
+        <option value="'Dancing Script', cursive">Dancing Script</option>
+      </select>
+    </section>
 
-    <form action="" method="post" autocomplete="off">
-    <div class="container">
-        <h1>One-Minute Journal</h1>
-        <p id="timer" aria-live="polite">60</p>
+    <section class="container" aria-labelledby="journal-heading">
+      <h1 id="journal-heading">One-Minute Journal</h1>
+      <p id="timer" role="status" aria-live="polite">60</p>
+
+      <form method="post" autocomplete="off" aria-label="Journal Entry Form">
         <label for="journalInput" class="visually-hidden">Journal Entry</label>
-        <textarea id="journalInput" name="Entry" placeholder="Start typing..." disabled></textarea>
-        <button id="startBtn" type="button">Start Journaling</button>
-        <!-- <button>Reset</button> -->
-    </div>
-    </form>
-    
-    <script src="/script.js"></script>
+        <textarea
+          id="journalInput"
+          name="Entry"
+          placeholder="Start typing..."
+          disabled
+          aria-disabled="true"
+        ></textarea>
+
+        <button id="startBtn" type="button" aria-pressed="false">
+          Start Journaling
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <script src="/script.js" defer></script>
 </body>
 </html>
