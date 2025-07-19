@@ -3,6 +3,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const journalInput = document.getElementById("journalInput");
     const timerDisplay = document.getElementById("timer");
     const fontSelect = document.getElementById("fontSelect");
+    const toggle = document.getElementById("theme-toggle");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    // Initialize theme
+    const savedTheme = localStorage.getItem("theme");
+    const theme = savedTheme || (prefersDark ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+    toggle.checked = theme === 'dark';
+
+    // Toggle listener
+    toggle.addEventListener('change', () => {
+        const newTheme = toggle.checked ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
 
     const DURATION = 60;
     let timer;
